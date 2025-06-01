@@ -85,11 +85,20 @@ CM_2018_dhs_hr <- read_dta(file.path(DataDir, "CM_2018_DHS_09172021_1832_141460/
 id.folder(DataDir, "CD") 
 CD_2013_dhs <- read_dta(file.path(DataDir, "CD_2013-14_DHS_03152022_1247_141460/CDPR61DT", "CDPR61FL.dta")) %>% 
   mutate(country_year= "CD_2013")
+CD_2013_dhs_hr <- read_dta(file.path(DataDir, "CD_2013-14_DHS_03152022_1247_141460/CDHR61DT", "CDHR61FL.dta")) %>% 
+  mutate(country_year= "CD_2013")
 
 #Cote d'Ivoire
 id.folder(DataDir, "CI") 
 CI_2012_dhs <- read_dta(file.path(DataDir, "CI_2011-12_DHS_09172021_1847_141460/CIPR62DT", "CIPR62FL.dta")) %>% 
   mutate(country_year= "CI_2012")
+CI_2012_dhs_hr <- read_dta(file.path(DataDir, "CI_2011-12_DHS_09172021_1847_141460/CIHR62DT", "CIHR62FL.dta")) %>% 
+  mutate(country_year= "CI_2012")
+
+CI_2021_dhs <- read_dta(file.path(DataDir, "CI_2021_DHS_01032024_2237_191741/CIPR81DT", "CIPR81FL.dta")) %>% 
+  mutate(country_year= "CI_2021")
+CI_2021_dhs_hr <- read_dta(file.path(DataDir, "CI_2021_DHS_01032024_2237_191741/CIHR81DT", "CIHR81FL.dta")) %>% 
+  mutate(country_year= "CI_2021")
 
 #Gambia
 GM_2013_dhs <- read_dta(file.path(DataDir, "GM_2013_DHS_09212021_1454_141460/GMPR61DT", "GMPR61FL.dta")) %>% 
@@ -213,6 +222,9 @@ ML_2021_dhs_hr  <- read_dta(file.path(DataDir, "ML_2021_MIS_06062023_27_191741/M
 #Mauritania
 id.folder(DataDir, "MR") 
 MR_2020_dhs <- read_dta(file.path(DataDir, "MR_2019-21_DHS_03162023_243_191741/MRPR71DT", "MRPR71FL.dta")) %>% 
+  mutate(country_year= "MR_2020")
+#HR files
+MR_2020_dhs_hr <- read_dta(file.path(DataDir, "MR_2019-21_DHS_03162023_243_191741/MRHR71DT", "MRHR71FL.dta")) %>% 
   mutate(country_year= "MR_2020")
 
 #Mozambique
