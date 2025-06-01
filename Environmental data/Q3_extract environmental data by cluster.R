@@ -170,6 +170,9 @@ for(i in seq_along(BF_2014)) {names(BF_2014)[[i]] <- paste0(unique(BF_2014[[i]]$
 BF_2017 <- survey_gps_comb(x= "BF_2017", y= "BF_2017")
 for(i in seq_along(BF_2017)) {names(BF_2017)[[i]] <- paste0(unique(BF_2017[[i]]$hv007), '_', unique(BF_2017[[i]]$hv006))}
 
+BF_2021 <- survey_gps_comb(x= "BF_2021", y= "BF_2021")
+for(i in seq_along(BF_2021)) {names(BF_2021)[[i]] <- paste0(unique(BF_2021[[i]]$hv007), '_', unique(BF_2021[[i]]$hv006))}
+
 GPS_all <- sapply(c(BF_2010, BF_2014, BF_2017), sf:::as_Spatial, simplify = F)
 
 
@@ -204,6 +207,34 @@ for(i in seq_along(CM_2018)) {names(CM_2018)[[i]] <- paste0(unique(CM_2018[[i]]$
 
 GPS_all <- sapply(c(CM_2011, CM_2018), sf:::as_Spatial, simplify = F)
 names(GPS_all) 
+
+# Congo, Democratic Republic
+dhs_all <- list(CD_2013_dhs)
+names(dhs_all) <- "CD_2013"
+
+dhs_all <- dhs_all %>% map(~filter(., hv025 == 1)) %>%  map(~dplyr::select(., hv001, hv006, hv007, hv025)) %>%
+  map(~distinct(.,)) #get Urban cluster numbers by month and survey year
+
+CD_2013 <- survey_gps_comb(x= "CD_2013", y= "CD_2013")
+for(i in seq_along(CD_2013)) {names(CD_2013)[[i]] <- paste0(unique(CD_2013[[i]]$hv007), '_', unique(CD_2013[[i]]$hv006))}
+
+GPS_all <- sapply(c(CD_2013), sf:::as_Spatial, simplify = F)
+names(GPS_all) 
+
+# Cote d'Ivoire
+dhs_all <- list(CI_2012_dhs, CI_2021_dhs)
+names(dhs_all) <-  c("CI_2012", "CI_2021")
+
+dhs_all <- dhs_all %>% map(~filter(., hv025 == 1)) %>%  map(~dplyr::select(., hv001, hv006, hv007, hv025)) %>%
+  map(~distinct(.,)) #get Urban cluster numbers by month and survey year
+
+CI_2012 <- survey_gps_comb(x= "CI_2012", y= "CI_2012")
+for(i in seq_along(CI_2012)) {names(CI_2012)[[i]] <- paste0(unique(CI_2012[[i]]$hv007), '_', unique(CI_2012[[i]]$hv006))}
+
+CI_2021 <- survey_gps_comb(x= "CI_2021", y= "CI_2021")
+for(i in seq_along(CI_2021)) {names(CI_2021)[[i]] <- paste0(unique(CI_2021[[i]]$hv007), '_', unique(CI_2021[[i]]$hv006))}
+
+GPS_all <- sapply(c(CI_2012, CI_2021), sf:::as_Spatial, simplify = F)
 
 
 # Gambia
@@ -331,6 +362,20 @@ for(i in seq_along(MW_2017)) {names(MW_2017)[[i]] <- paste0(unique(MW_2017[[i]]$
 
 GPS_all <- sapply(c(MW_2012, MW_2014, MW_2017), sf:::as_Spatial, simplify = F)
 names(GPS_all) 
+
+# Mauritania
+dhs_all <- list(MR_2020_dhs)
+names(dhs_all) <- c("MR_2020")
+
+dhs_all <- dhs_all %>% map(~filter(., hv025 == 1)) %>%  map(~dplyr::select(., hv001, hv006, hv007, hv025)) %>%
+  map(~distinct(.,)) #get Urban cluster numbers by month and survey year
+
+MR_2020 <- survey_gps_comb(x= "MR_2020", y= "MR_2020")
+for(i in seq_along(MR_2020)) {names(MR_2020)[[i]] <- paste0(unique(MR_2020[[i]]$hv007), '_', unique(MR_2020[[i]]$hv006))}
+
+GPS_all <- sapply(c(MR_2020), sf:::as_Spatial, simplify = F)
+names(GPS_all) 
+
 
 # Mozambique
 dhs_all <- list(MZ_2011_dhs, MZ_2015_dhs, MZ_2018_dhs)
