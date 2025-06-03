@@ -4,12 +4,12 @@ The scripts in this repo can be used to analyze the DHS/ MIS to calculate P. fal
 
 ### Folders
 **Trends in malaria prevalence, net use and access:** 
-1.) Desciptive analysis of P. falciparum prevalence urban areas, ITN access and use
-2.) Multivariate modeling of urban malaria (ZIP Poisson)
+Desciptive analysis of P. falciparum prevalence urban areas, ITN access and use
+*Multivariate modeling of urban malaria (ZIP Poisson)
 **Redistribution of nets:**
-1.) Includes analysis of urban ITN redistribution scenarios
+*Includes analysis of urban ITN redistribution scenarios
 **Environmental data:**
-1.) Includes code to extract precipitation, relative humidity, and enhanced vegetation index (EVI) by geospatial location for all of Africa
-2.) Extract environmental data per cluster by month/year of survey
+*Includes code to extract precipitation, relative humidity, and enhanced vegetation index (EVI) by geospatial location for all of Africa
+*Extract environmental data per cluster by month/year of survey
 **Functions:**
 -Functions for creating plots
