@@ -17,10 +17,9 @@ library(survey)
 library(haven)
 library(dplyr)
 
-source("data_extractor_functions.R")
 options(survey.lonely.psu="adjust") # this option allows admin units with only one cluster to be analyzed
 
-#FUNCTIONS FOR HERE
+#FUNCTIONS
 
 #survey design function 
 svydesign.fun <- function(filename){
