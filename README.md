@@ -38,6 +38,34 @@ install.packages(list.of.packages)
 ```
 
 ### Demo 
-#### Instructions on how to run the sample data.
- Sample data is available in the following folder:
- 1. 
+#### Instructions on how to run the code.
+ Sample data is available in the following folder: Data
+ 
+Start with the following code to import the DHS data: 
+1. trends in malaria prevalence, net use and access/read_DHS_data.R 
+   Data must be obtained directly from the DHS website for your research project. We used the household members (PR) and household-level (HR) datasets. 
+2. Pull the variables of interest by cluster from the DHS/ MIS surveys using the following code scripts:
+   trends in malaria prevalence, net use and access/calculate_ITN_use_access.R 
+   trends in malaria prevalence, net use and access/Q3_modern_housing.R
+   trends in malaria prevalence, net use and access/Q3_proportion of ITNs by wealthq.R 
+   trends in malaria prevalence, net use and access/Q3_pfpr_bycluster_rdt.R
+   trends in malaria prevalence, net use and access/Q3_pfpr_by_RDT_plots.R 
+   trends in malaria prevalence, net use and access/Q3_pfpr_RDT_urban_wealth.R 
+   trends in malaria prevalence, net use and access/Q3_pfpr_RDT_largest urban center.R 
+   trends in malaria prevalence, net use and access/Q3_netuse_access_urban_bywealth.R
+
+Get the environmental data by running the code in the following order: 
+ a) trends in malaria prevalence, net use and access/Q3_data prep.R
+ b) Environmental data/read_GPS_cluster_shapefiles.R
+ c) Environmental data/Chirps_data_download.R
+ d) Environmental data/EVI_data_download.R
+ e) Environmental data/Q3_extract environmental data by cluster.R
+
+3. After obtaining the variables of interest, combine them into one dataset using:
+   trends in malaria prevalence, net use and access/merge covariate files.R
+*For the Demo, please use the sample dataset found here for analysis: data\sample data
+
+4. Run the analysis:
+   trends in malaria prevalence, net use and access/Q3_descriptive analysis_final.R
+   trends in malaria prevalence, net use and access/Q3_ZIP_models.R
+
